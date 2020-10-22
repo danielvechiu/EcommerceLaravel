@@ -1,0 +1,126 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.background-img {
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -100px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+}
+
+.monad {
+    font-family: Nunito Sans, Arial;
+}
+
+.nunito {
+    font-family: Nunito Sans, Arial;
+}
+
+.shadow-filters {
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-product-page-info {
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.active {
+    background-color: #ed8936;
+}
+
+.active-color {
+    border: 2px solid #ed8936;
+}
+
+@responsive {
+    .bluetext {
+        color: blue;
+    }
+}
+
+.search-input-animation {
+    animation: search-anim forwards 0.2s;
+}
+
+@keyframes search-anim {
+    0% {
+        transform: translateX(-999px);
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Merge pe meniul propriu zis */
+.activeMenu {
+    opacity: 1 !important;
+}
+
+/* Initial state */
+.burgerline {
+    border-bottom: 2px solid black;
+    width: 25px;
+    margin-bottom: 5px;
+    transition: all 0.3s linear;
+}
+
+/* Cand meniul este deschis*/
+.activeMenu .burgerline {
+    border-bottom: 2px solid #ed8936 !important;
+}
+
+.activeMenu .burgerline:nth-child(1) {
+    transform: rotate(45deg) translate(1px, -3px);
+    transform-origin: top left;
+}
+
+.activeMenu .burgerline:nth-child(2) {
+    transform: rotate(135deg) translate(1px, 1px);
+    transform-origin: center;
+}
+
+#b-menu {
+    position: fixed;
+    background: #000 url(../images/menu-bg-pic.jpg) no-repeat center bottom;
+    background-size: contain;
+    width: 100%;
+    max-width: 100vw;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.change::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    font-size: 21px;
+    color: black;
+}
+.change:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 21px;
+    color: black;
+}
+
+.change::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 21px;
+    color: black;
+}
+
+.change:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 21px;
+    color: black;
+}
+
+button:disabled {
+    background-color: rgb(199, 199, 199);
+}
